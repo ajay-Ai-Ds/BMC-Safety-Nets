@@ -137,6 +137,8 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
+      </head>
+      <body className="min-h-full bg-slate-50 text-slate-900 flex flex-col font-sans">
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-FW7NBD4VZ9"
           strategy="afterInteractive"
@@ -149,8 +151,6 @@ export default function RootLayout({
             gtag('config', 'G-FW7NBD4VZ9');
           `}
         </Script>
-      </head>
-      <body className="min-h-full bg-slate-50 text-slate-900 flex flex-col font-sans">
         {children}
       </body>
     </html>
