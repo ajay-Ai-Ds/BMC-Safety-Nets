@@ -6,6 +6,8 @@
   --color-primary-dark: #081a30;
   --color-accent: #10b981; /* Premium Emerald/WhatsApp Green */
   --color-accent-dark: #059669;
+  --color-call-red: #ef4444; /* Premium Red for Call CTA */
+  --color-call-red-hover: #dc2626;
   --color-text-dark: #1f2937;
   --color-text-light: #f3f4f6;
   

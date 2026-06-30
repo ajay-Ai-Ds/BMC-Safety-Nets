@@ -59,7 +59,7 @@ export default function FloatingCTAs() {
           animate={{ scale: 1 }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="flex items-center justify-center w-14 h-14 bg-primary hover:bg-primary-light text-white rounded-full shadow-lg cursor-pointer transition-colors duration-200 group"
+          className="flex items-center justify-center w-14 h-14 bg-call-red hover:bg-call-red-hover text-white rounded-full shadow-lg cursor-pointer transition-colors duration-200 group"
           aria-label="Call Customer Care"
         >
           <Phone className="w-6 h-6 fill-white" />
