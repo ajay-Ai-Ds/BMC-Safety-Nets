@@ -72,6 +72,9 @@ export const metadata: Metadata = {
   },
   other: {
     "google-site-verification": "verification_token_here", // Note: replace this with your actual Google Search Console token
+  },
+  verification: {
+    google: "GiuYVwkg5ET-gVdnDQ_Bje9ZUTj2ULmGvCpqjeAU3ME",
   }
 };
 
