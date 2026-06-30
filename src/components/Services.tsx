@@ -141,7 +141,7 @@ export default function Services() {
   const activeCategory = servicesData[activeTab];
 
   const whatsappUrl = (serviceName: string) =>
-    `https://wa.me/917795515500?text=Hi%20BMC%20Safety%20Nets%2C%20I%20am%20interested%20in%20a%20free%20quote%20for%20${encodeURIComponent(
+    `https://wa.me/919686668224?text=Hi%20BMC%20Safety%20Nets%2C%20I%20am%20interested%20in%20a%20free%20quote%20for%20${encodeURIComponent(
       serviceName
     )}.`;
 
@@ -255,7 +255,7 @@ export default function Services() {
 
                     <div className="grid grid-cols-2 gap-2">
                       <a
-                        href="tel:+917795515500"
+                        href="tel:+919686668224"
                         className="flex items-center justify-center space-x-1 bg-primary text-white py-3 px-3 rounded-lg text-xs font-bold shadow-sm hover:bg-primary-light transition-colors min-h-[48px]"
                       >
                         <Phone className="w-3.5 h-3.5 fill-white" />
@@ -287,10 +287,10 @@ export default function Services() {
           </div>
           <div className="flex flex-wrap gap-3">
             <a
-              href="tel:+917795515500"
+              href="tel:+919686668224"
               className="bg-white text-slate-900 hover:bg-slate-100 py-3 px-5 rounded-lg text-sm font-bold transition-all shadow-sm"
             >
-              📞 Call +91 77955 15500
+              📞 Call +91 96866 68224
             </a>
             <a
               href={whatsappUrl("General Inquiry")}
@@ -375,7 +375,7 @@ export default function Services() {
 
                 <div className="grid grid-cols-2 gap-3 pt-4 border-t border-slate-100">
                   <a
-                    href="tel:+917795515500"
+                    href="tel:+919686668224"
                     className="flex items-center justify-center space-x-2 bg-primary text-white py-3 rounded-lg text-sm font-bold shadow-md hover:bg-primary-light min-h-[48px]"
                   >
                     <Phone className="w-4 h-4 fill-white" />

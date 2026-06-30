@@ -186,11 +186,11 @@ export default function FAQ() {
             Still have an unanswered question? Call us directly for immediate support!
           </p>
           <a
-            href="tel:+917795515500"
+            href="tel:+919686668224"
             className="inline-flex items-center space-x-1.5 text-primary hover:text-primary-light font-bold text-sm sm:text-base mt-2"
           >
             <span>Call Customer Support:</span>
-            <span className="underline">+91 77955 15500</span>
+            <span className="underline">+91 96866 68224</span>
           </a>
         </div>
 

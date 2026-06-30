@@ -62,11 +62,11 @@ export default function WhyChooseUs() {
 
             <div className="pt-2">
               <a
-                href="tel:+917795515500"
+                href="tel:+919686668224"
                 className="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white font-bold py-3 px-6 rounded-lg text-sm transition-all shadow-md"
               >
                 <PhoneCall className="w-4 h-4 fill-white" />
-                <span>Call +91 77955 15500</span>
+                <span>Call +91 96866 68224</span>
               </a>
             </div>
           </div>

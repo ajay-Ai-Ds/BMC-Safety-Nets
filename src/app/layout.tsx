@@ -16,7 +16,7 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: "BMC Safety Nets Bangalore | Premium Balcony Safety Nets & Invisible Grills",
-  description: "BMC Safety Nets is Bangalore's leading provider of premium, UV-resistant safety nets, invisible grills, and ceiling cloth hangers. Same-day installation. 100% safe & affordable. Call +91 77955 15500 for a free inspection!",
+  description: "BMC Safety Nets is Bangalore's leading provider of premium, UV-resistant safety nets, invisible grills, and ceiling cloth hangers. Same-day installation. 100% safe & affordable. Call +91 96866 68224 for a free inspection!",
   keywords: [
     "Bangalore Safety Nets",
     "Safety Nets Bangalore",
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "BMC Safety Nets Bangalore | Balcony Safety Nets",
-    description: "Bangalore's premium safety net experts. Same-day installation & free site inspection. Call +91 77955 15500.",
+    description: "Bangalore's premium safety net experts. Same-day installation & free site inspection. Call +91 96866 68224.",
     images: ["https://bmcsafetynets.in/images/balcony.webp"],
   },
   other: {
@@ -88,7 +88,7 @@ export default function RootLayout({
     "image": "https://bmcsafetynets.in/images/balcony.webp",
     "@id": "https://bmcsafetynets.in/#localbusiness",
     "url": "https://bmcsafetynets.in",
-    "telephone": "+917795515500",
+    "telephone": "+919686668224",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",

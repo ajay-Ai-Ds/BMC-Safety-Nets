@@ -26,14 +26,14 @@ export default function Footer() {
             </p>
             <div className="flex space-x-3">
               <a
-                href="tel:+917795515500"
+                href="tel:+919686668224"
                 className="flex items-center justify-center w-12 h-12 rounded-full bg-slate-800 hover:bg-primary-light text-white transition-colors duration-200"
                 aria-label="Call Us"
               >
                 <Phone className="w-5 h-5 fill-white" />
               </a>
               <a
-                href="https://wa.me/917795515500?text=Hi%20BMC%20Safety%20Nets%2C%20I%20need%20more%20information%20about%20your%20services."
+                href="https://wa.me/919686668224?text=Hi%20BMC%20Safety%20Nets%2C%20I%20need%20more%20information%20about%20your%20services."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center w-12 h-12 rounded-full bg-slate-800 hover:bg-accent hover:text-slate-900 text-white transition-colors duration-200"
@@ -140,8 +140,8 @@ export default function Footer() {
               </li>
               <li className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-primary-light shrink-0" />
-                <a href="tel:+917795515500" className="hover:text-white transition-colors font-semibold">
-                  +91 77955 15500
+                <a href="tel:+919686668224" className="hover:text-white transition-colors font-semibold">
+                  +91 96866 68224
                 </a>
               </li>
               <li className="flex items-center space-x-2">

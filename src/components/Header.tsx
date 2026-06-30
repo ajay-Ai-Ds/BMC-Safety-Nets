@@ -97,15 +97,15 @@ export default function Header() {
           {/* Call / WhatsApp CTAs */}
           <div className="hidden sm:flex items-center space-x-3">
             <a
-              href="tel:+917795515500"
+              href="tel:+919686668224"
               className="flex items-center space-x-1.5 bg-primary text-white px-4 py-2.5 rounded-lg text-sm font-semibold hover:bg-primary-light transition-all duration-200 shadow-sm hover:shadow-md"
             >
               <Phone className="w-4 h-4 fill-white" />
-              <span>+91 77955 15500</span>
+              <span>+91 96866 68224</span>
             </a>
 
             <a
-              href="https://wa.me/917795515500?text=Hi%20BMC%20Safety%20Nets%2C%20I%20am%20interested%20in%20a%20free%20inspection%20and%20quote%20for%20your%20services."
+              href="https://wa.me/919686668224?text=Hi%20BMC%20Safety%20Nets%2C%20I%20am%20interested%20in%20a%20free%20inspection%20and%20quote%20for%20your%20services."
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-1.5 bg-accent hover:bg-accent-dark text-white px-4 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 shadow-sm hover:shadow-md"
@@ -121,7 +121,7 @@ export default function Header() {
           {/* Mobile hamburger menu */}
           <div className="lg:hidden flex items-center space-x-2">
             <a
-              href="tel:+917795515500"
+              href="tel:+919686668224"
               className="w-12 h-12 flex items-center justify-center rounded-lg bg-primary text-white hover:bg-primary-light transition-colors"
               aria-label="Call Customer Care"
             >
@@ -163,14 +163,14 @@ export default function Header() {
 
               <div className="grid grid-cols-2 gap-3 pt-4">
                 <a
-                  href="tel:+917795515500"
+                  href="tel:+919686668224"
                   className="flex items-center justify-center space-x-1 bg-primary text-white py-3 rounded-lg text-sm font-bold shadow-sm"
                 >
                   <Phone className="w-4 h-4 fill-white" />
                   <span>Call Now</span>
                 </a>
                 <a
-                  href="https://wa.me/917795515500?text=Hi%20BMC%20Safety%20Nets%2C%20I%20am%20interested%20in%20a%20free%20inspection%20and%20quote%20for%20your%20services."
+                  href="https://wa.me/919686668224?text=Hi%20BMC%20Safety%20Nets%2C%20I%20am%20interested%20in%20a%20free%20inspection%20and%20quote%20for%20your%20services."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center space-x-1 bg-accent text-white py-3 rounded-lg text-sm font-bold shadow-sm"

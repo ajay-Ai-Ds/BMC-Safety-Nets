@@ -214,11 +214,11 @@ export default function Popups() {
                     <span className="text-xs text-slate-400">Or connect instantly via</span>
                     <div className="flex justify-center space-x-4 mt-2">
                       <a
-                        href="tel:+917795515500"
+                        href="tel:+919686668224"
                         className="flex items-center space-x-1 text-primary hover:text-primary-light font-bold text-xs"
                       >
                         <Phone className="w-3 h-3 fill-primary" />
-                        <span>Call +91 77955 15500</span>
+                        <span>Call +91 96866 68224</span>
                       </a>
                     </div>
                   </div>

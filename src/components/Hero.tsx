@@ -136,7 +136,7 @@ export default function Hero() {
     }, 4000);
   };
 
-  const whatsappUrl = "https://wa.me/917795515500?text=Hi%20BMC%20Safety%20Nets%2C%20I%20want%20to%20book%20a%20free%20inspection%20and%20quote.";
+  const whatsappUrl = "https://wa.me/919686668224?text=Hi%20BMC%20Safety%20Nets%2C%20I%20want%20to%20book%20a%20free%20inspection%20and%20quote.";
 
   return (
     <section 
@@ -375,7 +375,7 @@ export default function Hero() {
 
                   <div className="grid grid-cols-2 gap-3 pt-1">
                     <a
-                      href="tel:+917795515500"
+                      href="tel:+919686668224"
                       className="flex items-center justify-center space-x-1.5 bg-primary hover:bg-primary-light text-white py-2.5 rounded-lg text-xs font-semibold border border-white/10 transition-colors"
                     >
                       <Phone className="w-3.5 h-3.5 fill-white" />

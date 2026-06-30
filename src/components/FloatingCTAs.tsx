@@ -26,7 +26,7 @@ export default function FloatingCTAs() {
     });
   };
 
-  const whatsappUrl = "https://wa.me/917795515500?text=Hi%20BMC%20Safety%20Nets%2C%20I%20want%20to%20book%20a%20free%20inspection%20for%20my%20balcony%20safety%20nets.";
+  const whatsappUrl = "https://wa.me/919686668224?text=Hi%20BMC%20Safety%20Nets%2C%20I%20want%20to%20book%20a%20free%20inspection%20for%20my%20balcony%20safety%20nets.";
 
   return (
     <>
@@ -54,7 +54,7 @@ export default function FloatingCTAs() {
 
         {/* Call Floating */}
         <motion.a
-          href="tel:+917795515500"
+          href="tel:+919686668224"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           whileHover={{ scale: 1.1 }}
@@ -89,7 +89,7 @@ export default function FloatingCTAs() {
       {/* Sticky Bottom Call + WhatsApp Bar (Mobile Only) */}
       <div className="sm:hidden fixed bottom-0 left-0 w-full bg-white border-t border-slate-200 shadow-[0_-4px_12px_rgba(0,0,0,0.08)] grid grid-cols-2 p-3 gap-3 z-50">
         <a
-          href="tel:+917795515500"
+          href="tel:+919686668224"
           className="flex items-center justify-center space-x-2 bg-primary text-white py-3.5 px-4 rounded-xl text-base font-bold active:scale-95 transition-transform min-h-[48px]"
         >
           <Phone className="w-5 h-5 fill-white" />

@@ -41,7 +41,7 @@ export default function Contact() {
     }, 4000);
   };
 
-  const whatsappUrl = "https://wa.me/917795515500?text=Hi%20BMC%20Safety%20Nets%2C%20I%20want%20to%20get%20in%20touch%20with%20you%20for%20safety%20net%20installation.";
+  const whatsappUrl = "https://wa.me/919686668224?text=Hi%20BMC%20Safety%20Nets%2C%20I%20want%20to%20get%20in%20touch%20with%20you%20for%20safety%20net%20installation.";
 
   return (
     <section id="contact" className="py-20 bg-white relative">
@@ -81,11 +81,11 @@ export default function Contact() {
             
             <div className="md:col-span-4 flex flex-col sm:flex-row md:flex-col gap-3 justify-center">
               <a
-                href="tel:+917795515500"
+                href="tel:+919686668224"
                 className="flex items-center justify-center space-x-2 bg-white text-primary hover:bg-slate-100 py-4 px-6 rounded-xl font-extrabold text-base shadow-md transition-all active:scale-98"
               >
                 <Phone className="w-5 h-5 fill-primary" />
-                <span>Call +91 77955 15500</span>
+                <span>Call +91 96866 68224</span>
               </a>
               <a
                 href={whatsappUrl}
