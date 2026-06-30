@@ -136,6 +136,17 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-FW7NBD4VZ9"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-FW7NBD4VZ9');
+            `,
+          }}
+        />
       </head>
       <body className="min-h-full bg-slate-50 text-slate-900 flex flex-col font-sans">
         {children}
