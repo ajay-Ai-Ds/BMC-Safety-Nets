@@ -72,6 +72,10 @@ export default function Gallery() {
     ? galleryItems
     : galleryItems.filter(item => item.category === activeFilter);
 
+  // Ensure we have enough items for a seamless marquee loop (at least 12 items, duplicated)
+  const repeatFactor = Math.ceil(12 / (filteredItems.length || 1));
+  const marqueeItems = Array(repeatFactor * 2).fill(filteredItems).flat();
+
   const openLightbox = (itemIndex: number) => {
     // Find index of the clicked item in the FILTERED list
     setLightboxIndex(itemIndex);
@@ -88,7 +92,7 @@ export default function Gallery() {
   };
 
   return (
-    <section id="gallery" className="py-20 bg-white relative">
+    <section id="gallery" className="py-20 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Title */}
@@ -99,13 +103,12 @@ export default function Gallery() {
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 font-display">
             Completed Projects Gallery
           </h2>
-          <p className="text-slate-500 mt-3 text-sm sm:text-base">
+          <p className="text-slate-600 mt-3 text-sm sm:text-base">
             Take a look at some of our premium safety net and invisible grill installations across Bangalore.
           </p>
           <div className="h-1 bg-accent w-16 mx-auto mt-4 rounded" />
         </div>
 
-        {/* Filters */}
         <div className="flex flex-wrap justify-center gap-2 mb-10">
           {categories.map((cat) => (
             <button
@@ -114,7 +117,7 @@ export default function Gallery() {
                 setActiveFilter(cat);
                 setLightboxIndex(null);
               }}
-              className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer ${
+              className={`px-4 py-3 rounded-lg text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer min-h-[48px] ${
                 activeFilter === cat
                   ? "bg-primary text-white shadow-sm"
                   : "bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-800"
@@ -124,30 +127,34 @@ export default function Gallery() {
             </button>
           ))}
         </div>
+      </div>
 
-        {/* Grid Masonry-like Layout */}
-        <motion.div
-          layout
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
-          <AnimatePresence mode="popLayout">
-            {filteredItems.map((item, index) => (
-              <motion.div
-                key={item.id}
-                layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.3 }}
-                className="relative group rounded-2xl overflow-hidden aspect-[4/3] bg-slate-100 shadow-sm cursor-pointer hover:shadow-lg transition-all"
-                onClick={() => openLightbox(index)}
+      {/* Full-width Horizontal Marquee Area with side gradient fades */}
+      <div className="relative w-full overflow-hidden py-4 marquee-container">
+        {/* Left Fade */}
+        <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-r from-white to-transparent pointer-events-none z-10" />
+        
+        {/* Right Fade */}
+        <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-l from-white to-transparent pointer-events-none z-10" />
+
+        {/* Marquee Flex Row */}
+        <div className="animate-marquee flex gap-6">
+          {marqueeItems.map((item, index) => {
+            const originalIndex = index % filteredItems.length;
+            return (
+              <button
+                key={`${item.id}-${index}`}
+                className="relative group rounded-2xl overflow-hidden aspect-[4/3] w-[280px] sm:w-[350px] bg-slate-100 shadow-sm cursor-pointer hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 flex-shrink-0 text-left"
+                onClick={() => openLightbox(originalIndex)}
+                aria-label={`View larger image of ${item.title}`}
               >
                 <Image
                   src={item.image}
                   alt={item.title}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  sizes="(max-width: 768px) 280px, 350px"
+                  priority={index < 6}
                 />
                 
                 {/* Black Overlay on Hover */}
@@ -155,17 +162,17 @@ export default function Gallery() {
                   <span className="text-white/80 text-[10px] uppercase font-bold tracking-wider mb-1">
                     {item.category}
                   </span>
-                  <h3 className="text-white font-bold text-base sm:text-lg font-display">
+                  <h3 className="text-white font-bold text-sm sm:text-base font-display">
                     {item.title}
                   </h3>
                   <div className="absolute top-4 right-4 bg-white/20 p-2 rounded-lg text-white backdrop-blur-sm">
-                    <Maximize2 className="w-4.5 h-4.5" />
+                    <Maximize2 className="w-4 h-4" />
                   </div>
                 </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
+              </button>
+            );
+          })}
+        </div>
       </div>
 
       {/* Full Screen Lightbox Modal */}
@@ -176,7 +183,7 @@ export default function Gallery() {
             {/* Close button */}
             <button
               onClick={() => setLightboxIndex(null)}
-              className="absolute top-6 right-6 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 p-2 rounded-lg transition-colors z-20 cursor-pointer"
+              className="absolute top-6 right-6 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 w-12 h-12 flex items-center justify-center rounded-lg transition-colors z-20 cursor-pointer"
               aria-label="Close Lightbox"
             >
               <X className="w-6 h-6" />
@@ -185,7 +192,7 @@ export default function Gallery() {
             {/* Left navigation arrow */}
             <button
               onClick={handlePrev}
-              className="absolute left-4 sm:left-6 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 p-2 sm:p-3 rounded-full transition-colors z-20 cursor-pointer"
+              className="absolute left-4 sm:left-6 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center rounded-full transition-colors z-20 cursor-pointer"
               aria-label="Previous image"
             >
               <ChevronLeft className="w-6 h-6 sm:w-8 sm:h-8" />
@@ -212,7 +219,7 @@ export default function Gallery() {
             {/* Right navigation arrow */}
             <button
               onClick={handleNext}
-              className="absolute right-4 sm:right-6 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 p-2 sm:p-3 rounded-full transition-colors z-20 cursor-pointer"
+              className="absolute right-4 sm:right-6 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center rounded-full transition-colors z-20 cursor-pointer"
               aria-label="Next image"
             >
               <ChevronRight className="w-6 h-6 sm:w-8 sm:h-8" />

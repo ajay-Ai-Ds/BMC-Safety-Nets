@@ -159,7 +159,7 @@ export default function Reviews() {
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 font-display">
             Google Reviews from Happy Customers
           </h2>
-          <p className="text-slate-500 mt-3 text-sm sm:text-base">
+          <p className="text-slate-600 mt-3 text-sm sm:text-base">
             Read real feedback from homeowners across Bangalore who secured their spaces with us.
           </p>
           <div className="h-1 bg-accent w-16 mx-auto mt-4 rounded" />
@@ -185,7 +185,7 @@ export default function Reviews() {
                     </div>
                     <div>
                       <h3 className="font-bold text-sm text-slate-800">{rev.name}</h3>
-                      <p className="text-[11px] text-slate-500">{rev.location}</p>
+                      <p className="text-[11px] text-slate-600">{rev.location}</p>
                     </div>
                   </div>
 
@@ -214,16 +214,18 @@ export default function Reviews() {
           </div>
 
           {/* Slider Dots */}
-          <div className="flex justify-center space-x-2 mt-10">
+          <div className="flex justify-center items-center mt-10">
             {[...Array(Math.max(1, dotCount))].map((_, i) => (
               <button
                 key={i}
                 onClick={() => handleDotClick(i)}
-                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
-                  currentIndex === i ? "bg-primary w-6" : "bg-slate-300"
-                }`}
+                className="w-12 h-12 flex items-center justify-center cursor-pointer group"
                 aria-label={`Go to slide ${i + 1}`}
-              />
+              >
+                <span className={`h-2.5 rounded-full transition-all duration-300 ${
+                  currentIndex === i ? "bg-primary w-6" : "bg-slate-300 group-hover:bg-slate-400"
+                }`} />
+              </button>
             ))}
           </div>
         </div>
@@ -239,7 +241,7 @@ export default function Reviews() {
                   <Star key={i} className="w-4.5 h-4.5 fill-amber-400 stroke-amber-400" />
                 ))}
               </div>
-              <span className="text-slate-500 font-normal">(1,248+ customer ratings)</span>
+              <span className="text-slate-600 font-normal">(1,248+ customer ratings)</span>
             </div>
           </div>
         </div>

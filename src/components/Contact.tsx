@@ -55,7 +55,7 @@ export default function Contact() {
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 font-display">
             Request a Free Inspection Today
           </h2>
-          <p className="text-slate-500 mt-3 text-sm sm:text-base">
+          <p className="text-slate-600 mt-3 text-sm sm:text-base">
             Get in touch with us via phone, WhatsApp, or the enquiry form. We serve all areas in Bangalore.
           </p>
           <div className="h-1 bg-accent w-16 mx-auto mt-4 rounded" />
@@ -91,9 +91,9 @@ export default function Contact() {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center space-x-2 bg-accent hover:bg-accent-dark text-white py-4 px-6 rounded-xl font-extrabold text-base shadow-md transition-all active:scale-98"
+                className="flex items-center justify-center space-x-2 bg-accent hover:bg-accent-dark text-slate-900 py-4 px-6 rounded-xl font-extrabold text-base shadow-md transition-all active:scale-98"
               >
-                <MessageCircle className="w-5 h-5 fill-white" />
+                <MessageCircle className="w-5 h-5 fill-slate-900" />
                 <span>WhatsApp Quote</span>
               </a>
             </div>
@@ -161,14 +161,15 @@ export default function Contact() {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
                     <h3 className="text-xl font-bold text-slate-800 font-display">Send a Quick Message</h3>
-                    <p className="text-slate-500 text-xs mt-1">Our customer executive will reach out to you within minutes.</p>
+                    <p className="text-slate-600 text-xs mt-1">Our customer executive will reach out to you within minutes.</p>
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">
+                    <label htmlFor="contact-name" className="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1">
                       Your Name *
                     </label>
                     <input
+                      id="contact-name"
                       type="text"
                       required
                       placeholder="Enter your name"
@@ -180,10 +181,11 @@ export default function Contact() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">
+                      <label htmlFor="contact-phone" className="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1">
                         Phone Number *
                       </label>
                       <input
+                        id="contact-phone"
                         type="tel"
                         required
                         placeholder="Enter phone number"
@@ -193,10 +195,11 @@ export default function Contact() {
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">
+                      <label htmlFor="contact-service" className="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1">
                         Service Needed
                       </label>
                       <select
+                        id="contact-service"
                         value={service}
                         onChange={(e) => setService(e.target.value)}
                         className="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
@@ -211,10 +214,11 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">
+                    <label htmlFor="contact-message" className="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1">
                       Your Message (Optional)
                     </label>
                     <textarea
+                      id="contact-message"
                       rows={4}
                       placeholder="Enter detail requirements (e.g. Balcony height, area size, preferred installation time)"
                       value={message}
@@ -225,9 +229,9 @@ export default function Contact() {
 
                   <button
                     type="submit"
-                    className="w-full bg-accent hover:bg-accent-dark text-white py-3 rounded-lg text-sm font-bold flex items-center justify-center space-x-2 shadow-md hover:shadow-lg transition-all active:scale-98 cursor-pointer"
+                    className="w-full bg-accent hover:bg-accent-dark text-slate-900 py-3 rounded-lg text-sm font-bold flex items-center justify-center space-x-2 shadow-md hover:shadow-lg transition-all active:scale-98 cursor-pointer"
                   >
-                    <Send className="w-4 h-4 fill-white" />
+                    <Send className="w-4 h-4 fill-slate-900" />
                     <span>Submit Request</span>
                   </button>
                 </form>
@@ -235,7 +239,7 @@ export default function Contact() {
                 <div className="py-16 text-center space-y-4">
                   <CheckCircle className="w-16 h-16 text-accent mx-auto animate-bounce" />
                   <h3 className="text-2xl font-bold text-slate-800 font-display">Message Sent Successfully!</h3>
-                  <p className="text-slate-500 text-sm max-w-xs mx-auto">
+                  <p className="text-slate-600 text-sm max-w-xs mx-auto">
                     Thank you. We have received your query. Our field manager will call you immediately to arrange the visit.
                   </p>
                 </div>

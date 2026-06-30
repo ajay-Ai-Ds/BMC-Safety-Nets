@@ -125,7 +125,7 @@ export default function FAQ() {
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 font-display">
             Got Questions? We Have Answers
           </h2>
-          <p className="text-slate-500 mt-3 text-sm sm:text-base">
+          <p className="text-slate-600 mt-3 text-sm sm:text-base">
             Read through our 20 detailed FAQs to learn everything about installation, durability, and cost.
           </p>
           <div className="h-1 bg-accent w-16 mx-auto mt-4 rounded" />
@@ -140,7 +140,10 @@ export default function FAQ() {
             >
               {/* Accordion Trigger */}
               <button
+                id={`faq-trigger-${index}`}
                 onClick={() => toggleAccordion(index)}
+                aria-expanded={activeIndex === index}
+                aria-controls={`faq-answer-${index}`}
                 className="w-full flex items-center justify-between p-5 text-left text-slate-800 hover:text-primary font-bold text-sm sm:text-base font-display transition-colors duration-200 cursor-pointer"
               >
                 <span className="flex items-center space-x-3 pr-4">
@@ -158,6 +161,9 @@ export default function FAQ() {
               <AnimatePresence initial={false}>
                 {activeIndex === index && (
                   <motion.div
+                    id={`faq-answer-${index}`}
+                    role="region"
+                    aria-labelledby={`faq-trigger-${index}`}
                     initial={{ height: 0 }}
                     animate={{ height: "auto" }}
                     exit={{ height: 0 }}

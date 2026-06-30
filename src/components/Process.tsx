@@ -71,7 +71,7 @@ export default function Process() {
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 font-display">
             How It Works in 5 Easy Steps
           </h2>
-          <p className="text-slate-500 mt-3 text-sm sm:text-base">
+          <p className="text-slate-600 mt-3 text-sm sm:text-base">
             From your first call to a fully secured home, we make the entire process quick and seamless.
           </p>
           <div className="h-1 bg-accent w-16 mx-auto mt-4 rounded" />
@@ -109,7 +109,7 @@ export default function Process() {
                 <h3 className="font-bold text-lg text-slate-800 mt-6 mb-2 font-display">
                   {item.title}
                 </h3>
-                <p className="text-slate-500 text-xs sm:text-sm px-2 leading-relaxed">
+                <p className="text-slate-600 text-xs sm:text-sm px-2 leading-relaxed">
                   {item.desc}
                 </p>
               </motion.div>
@@ -149,7 +149,7 @@ export default function Process() {
                   <h3 className="font-bold text-base text-slate-800 font-display">
                     {item.title}
                   </h3>
-                  <p className="text-slate-500 text-xs sm:text-sm mt-1 leading-relaxed">
+                  <p className="text-slate-600 text-xs sm:text-sm mt-1 leading-relaxed">
                     {item.desc}
                   </p>
                 </div>

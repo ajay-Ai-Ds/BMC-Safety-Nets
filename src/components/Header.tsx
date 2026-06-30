@@ -122,14 +122,16 @@ export default function Header() {
           <div className="lg:hidden flex items-center space-x-2">
             <a
               href="tel:+917795515500"
-              className="p-2 rounded-lg bg-primary text-white hover:bg-primary-light transition-colors"
+              className="w-12 h-12 flex items-center justify-center rounded-lg bg-primary text-white hover:bg-primary-light transition-colors"
+              aria-label="Call Customer Care"
             >
               <Phone className="w-5 h-5 fill-white" />
             </a>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`p-2 rounded-lg transition-colors ${isScrolled ? "text-slate-800 hover:bg-slate-100" : "text-white hover:bg-white/10"
+              className={`w-12 h-12 flex items-center justify-center rounded-lg transition-colors ${isScrolled ? "text-slate-800 hover:bg-slate-100" : "text-white hover:bg-white/10"
                 }`}
+              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>

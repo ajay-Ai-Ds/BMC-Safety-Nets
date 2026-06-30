@@ -157,7 +157,7 @@ export default function Services() {
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 font-display">
             High-Quality Safety & Space Solutions
           </h2>
-          <p className="text-slate-500 mt-3 text-sm sm:text-base">
+          <p className="text-slate-600 mt-3 text-sm sm:text-base">
             Protect your home, block pigeons, and save space with our premium installations. Click on any service to learn details.
           </p>
           <div className="h-1 bg-accent w-16 mx-auto mt-4 rounded" />
@@ -165,12 +165,16 @@ export default function Services() {
 
         {/* Tab Buttons */}
         <div className="flex justify-center mb-12">
-          <div className="bg-white p-1.5 rounded-2xl shadow-sm border border-slate-100 flex space-x-1">
+          <div className="bg-white p-1.5 rounded-2xl shadow-sm border border-slate-100 flex space-x-1" role="tablist" aria-label="Services Categories">
             {(Object.keys(servicesData) as Array<"nets" | "grills" | "hangers">).map((key) => (
               <button
                 key={key}
+                role="tab"
+                aria-selected={activeTab === key}
+                aria-controls={`panel-${key}`}
+                id={`tab-${key}`}
                 onClick={() => setActiveTab(key)}
-                className={`px-5 py-3 rounded-xl text-sm font-bold transition-all duration-300 relative cursor-pointer ${
+                className={`px-5 py-3.5 rounded-xl text-sm font-bold transition-all duration-300 relative cursor-pointer min-h-[48px] ${
                   activeTab === key
                     ? "bg-primary text-white shadow-md"
                     : "text-slate-600 hover:text-primary hover:bg-slate-50"
@@ -183,13 +187,16 @@ export default function Services() {
         </div>
 
         {/* Active Tab description */}
-        <div className="text-center max-w-2xl mx-auto mb-10 -mt-4 text-xs sm:text-sm text-slate-500 italic">
+        <div className="text-center max-w-2xl mx-auto mb-10 -mt-4 text-xs sm:text-sm text-slate-600 italic">
           "{activeCategory.desc}"
         </div>
 
         {/* Services Grid */}
         <motion.div
           layout
+          id={`panel-${activeTab}`}
+          role="tabpanel"
+          aria-labelledby={`tab-${activeTab}`}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           <AnimatePresence mode="popLayout">
@@ -240,7 +247,7 @@ export default function Services() {
                   <div className="space-y-3">
                     <button
                       onClick={() => setSelectedService(item)}
-                      className="w-full flex items-center justify-center space-x-1.5 py-2 border border-slate-200 hover:border-primary text-slate-700 hover:text-primary font-semibold text-xs rounded-lg transition-all cursor-pointer"
+                      className="w-full flex items-center justify-center space-x-1.5 py-3 border border-slate-200 hover:border-primary text-slate-700 hover:text-primary font-semibold text-xs rounded-lg transition-all cursor-pointer min-h-[48px]"
                     >
                       <Info className="w-4 h-4" />
                       <span>Learn Technical Details</span>
@@ -249,7 +256,7 @@ export default function Services() {
                     <div className="grid grid-cols-2 gap-2">
                       <a
                         href="tel:+917795515500"
-                        className="flex items-center justify-center space-x-1 bg-primary text-white py-2 px-3 rounded-lg text-xs font-bold shadow-sm hover:bg-primary-light transition-colors"
+                        className="flex items-center justify-center space-x-1 bg-primary text-white py-3 px-3 rounded-lg text-xs font-bold shadow-sm hover:bg-primary-light transition-colors min-h-[48px]"
                       >
                         <Phone className="w-3.5 h-3.5 fill-white" />
                         <span>Call</span>
@@ -258,9 +265,9 @@ export default function Services() {
                         href={whatsappUrl(item.name)}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center space-x-1 bg-accent text-white py-2 px-3 rounded-lg text-xs font-bold shadow-sm hover:bg-accent-dark transition-colors"
+                        className="flex items-center justify-center space-x-1 bg-accent text-slate-900 py-3 px-3 rounded-lg text-xs font-bold shadow-sm hover:bg-accent-dark transition-colors min-h-[48px]"
                       >
-                        <MessageCircle className="w-3.5 h-3.5 fill-white" />
+                        <MessageCircle className="w-3.5 h-3.5 fill-slate-900" />
                         <span>WhatsApp</span>
                       </a>
                     </div>
@@ -327,12 +334,13 @@ export default function Services() {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
                 <button
                   onClick={() => setSelectedService(null)}
-                  className="absolute top-4 right-4 bg-white/20 hover:bg-white/40 p-1.5 rounded-lg text-white transition-colors"
+                  className="absolute top-4 right-4 bg-white/20 hover:bg-white/40 w-12 h-12 flex items-center justify-center rounded-lg text-white transition-colors cursor-pointer"
+                  aria-label="Close modal"
                 >
                   <X className="w-5 h-5" />
                 </button>
                 <div className="absolute bottom-4 left-6 pr-6">
-                  <span className="bg-accent text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">
+                  <span className="bg-accent text-slate-900 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">
                     {selectedService.tags[0]}
                   </span>
                   <h3 className="text-2xl font-bold text-white font-display mt-1">
@@ -347,7 +355,7 @@ export default function Services() {
                 </p>
 
                 <div className="border-t border-slate-100 pt-4 space-y-3">
-                  <div className="flex items-center gap-2 text-xs font-semibold text-slate-500 uppercase tracking-wide">
+                  <div className="flex items-center gap-2 text-xs font-semibold text-slate-600 uppercase tracking-wide">
                     <ShieldCheck className="w-4 h-4 text-primary" />
                     <span>Quality Specifications</span>
                   </div>
@@ -368,7 +376,7 @@ export default function Services() {
                 <div className="grid grid-cols-2 gap-3 pt-4 border-t border-slate-100">
                   <a
                     href="tel:+917795515500"
-                    className="flex items-center justify-center space-x-2 bg-primary text-white py-3 rounded-lg text-sm font-bold shadow-md hover:bg-primary-light"
+                    className="flex items-center justify-center space-x-2 bg-primary text-white py-3 rounded-lg text-sm font-bold shadow-md hover:bg-primary-light min-h-[48px]"
                   >
                     <Phone className="w-4 h-4 fill-white" />
                     <span>Call to Order</span>
@@ -377,9 +385,9 @@ export default function Services() {
                     href={whatsappUrl(selectedService.name)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center space-x-2 bg-accent text-white py-3 rounded-lg text-sm font-bold shadow-md hover:bg-accent-dark"
+                    className="flex items-center justify-center space-x-2 bg-accent text-slate-900 py-3 rounded-lg text-sm font-bold shadow-md hover:bg-accent-dark min-h-[48px]"
                   >
-                    <MessageCircle className="w-4 h-4 fill-white" />
+                    <MessageCircle className="w-4 h-4 fill-slate-900" />
                     <span>Send Message</span>
                   </a>
                 </div>

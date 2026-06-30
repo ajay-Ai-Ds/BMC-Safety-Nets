@@ -129,10 +129,11 @@ export default function Popups() {
               {!isSubmitted ? (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">
+                    <label htmlFor="popup-name" className="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1">
                       Your Name *
                     </label>
                     <input
+                      id="popup-name"
                       type="text"
                       required
                       placeholder="Enter your name"
@@ -143,10 +144,11 @@ export default function Popups() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">
+                    <label htmlFor="popup-phone" className="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1">
                       Phone Number *
                     </label>
                     <input
+                      id="popup-phone"
                       type="tel"
                       required
                       placeholder="Enter 10-digit phone number"
@@ -157,10 +159,11 @@ export default function Popups() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">
+                    <label htmlFor="popup-service" className="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1">
                       Service Needed
                     </label>
                     <select
+                      id="popup-service"
                       value={service}
                       onChange={(e) => setService(e.target.value)}
                       className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
@@ -174,10 +177,11 @@ export default function Popups() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">
+                    <label htmlFor="popup-message" className="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1">
                       Message (Optional)
                     </label>
                     <textarea
+                      id="popup-message"
                       rows={2}
                       placeholder="Any specific instructions..."
                       value={message}
@@ -187,7 +191,7 @@ export default function Popups() {
                   </div>
 
                   {/* Trust Factors inside popup */}
-                  <div className="grid grid-cols-2 gap-2 text-[11px] text-slate-500 pt-1">
+                  <div className="grid grid-cols-2 gap-2 text-[11px] text-slate-600 pt-1">
                     <span className="flex items-center space-x-1">
                       <span className="w-1.5 h-1.5 bg-accent rounded-full"></span>
                       <span>Same-Day Inspection</span>
@@ -200,9 +204,9 @@ export default function Popups() {
 
                   <button
                     type="submit"
-                    className="w-full bg-accent hover:bg-accent-dark text-white py-3 rounded-lg text-sm font-bold flex items-center justify-center space-x-2 shadow-md hover:shadow-lg transition-all active:scale-98"
+                    className="w-full bg-accent hover:bg-accent-dark text-slate-900 py-3 rounded-lg text-sm font-bold flex items-center justify-center space-x-2 shadow-md hover:shadow-lg transition-all active:scale-98"
                   >
-                    <Send className="w-4 h-4 fill-white" />
+                    <Send className="w-4 h-4 fill-slate-900" />
                     <span>Get Free Quote Now</span>
                   </button>
 
@@ -223,7 +227,7 @@ export default function Popups() {
                 <div className="py-8 flex flex-col items-center justify-center text-center space-y-3">
                   <CheckCircle className="w-16 h-16 text-accent animate-bounce" />
                   <h4 className="font-bold text-lg text-slate-800 font-display">Enquiry Submitted!</h4>
-                  <p className="text-sm text-slate-500 max-w-xs">
+                  <p className="text-sm text-slate-600 max-w-xs">
                     Thank you. Our executive will call you in the next 15 minutes to schedule the visit.
                   </p>
                 </div>
