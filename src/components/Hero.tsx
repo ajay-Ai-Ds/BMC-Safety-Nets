@@ -160,8 +160,6 @@ export default function Hero() {
             }}
             className="absolute inset-0 w-full h-full"
           >
-            {/* Dark gradient mask - solid on mobile/bottom, gradient left-to-right on desktop */}
-            <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-slate-950/90 via-slate-950/50 to-transparent z-10" />
             <Image
               src={slides[currentSlide].image}
               alt={slides[currentSlide].title}
