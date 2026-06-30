@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   authors: [{ name: "BMC Safety Nets Bangalore" }],
   category: "Home Services",
   alternates: {
-    canonical: "https://bmcsafetynets.in",
+    canonical: "https://bmcsafetynets.com",
   },
   robots: {
     index: true,
@@ -51,13 +51,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: "BMC Safety Nets Bangalore | Balcony Safety Nets & Invisible Grills",
     description: "Bangalore's trusted safety net installation experts. Premium quality, UV-resistant materials, same-day service, & free inspection. Protect your family today!",
-    url: "https://bmcsafetynets.in",
+    url: "https://bmcsafetynets.com",
     siteName: "BMC Safety Nets",
     locale: "en_IN",
     type: "website",
     images: [
       {
-        url: "https://bmcsafetynets.in/images/balcony.webp",
+        url: "https://bmcsafetynets.com/images/balcony.webp",
         width: 1200,
         height: 630,
         alt: "BMC Safety Nets Installation in Bangalore",
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "BMC Safety Nets Bangalore | Balcony Safety Nets",
     description: "Bangalore's premium safety net experts. Same-day installation & free site inspection. Call +91 96866 68224.",
-    images: ["https://bmcsafetynets.in/images/balcony.webp"],
+    images: ["https://bmcsafetynets.com/images/balcony.webp"],
   },
   other: {
     "google-site-verification": "verification_token_here", // Note: replace this with your actual Google Search Console token
@@ -85,9 +85,9 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "BMC Safety Nets",
-    "image": "https://bmcsafetynets.in/images/balcony.webp",
-    "@id": "https://bmcsafetynets.in/#localbusiness",
-    "url": "https://bmcsafetynets.in",
+    "image": "https://bmcsafetynets.com/images/balcony.webp",
+    "@id": "https://bmcsafetynets.com/#localbusiness",
+    "url": "https://bmcsafetynets.com",
     "telephone": "+919686668224",
     "priceRange": "$$",
     "address": {

@@ -131,8 +131,8 @@ export default function Contact() {
                   <Mail className="w-5 h-5 text-primary shrink-0 mt-1" />
                   <div>
                     <span className="font-bold text-slate-800 block">Email Address</span>
-                    <a href="mailto:info@bmcsafetynets.in" className="hover:text-primary transition-colors">
-                      info@bmcsafetynets.in
+                    <a href="mailto:info.bmcsafetynets@gmail.com" className="hover:text-primary transition-colors">
+                      info.bmcsafetynets@gmail.com
                     </a>
                   </div>
                 </div>
