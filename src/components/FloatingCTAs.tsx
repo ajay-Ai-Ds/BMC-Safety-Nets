@@ -90,7 +90,7 @@ export default function FloatingCTAs() {
       <div className="sm:hidden fixed bottom-0 left-0 w-full bg-white border-t border-slate-200 shadow-[0_-4px_12px_rgba(0,0,0,0.08)] grid grid-cols-2 p-3 gap-3 z-50">
         <a
           href="tel:+919686668224"
-          className="flex items-center justify-center space-x-2 bg-primary text-white py-3.5 px-4 rounded-xl text-base font-bold active:scale-95 transition-transform min-h-[48px]"
+          className="flex items-center justify-center space-x-2 bg-[#f97316] text-white py-3.5 px-4 rounded-xl text-base font-bold active:scale-95 transition-transform min-h-[48px]"
         >
           <Phone className="w-5 h-5 fill-white" />
           <span>Call Now</span>
