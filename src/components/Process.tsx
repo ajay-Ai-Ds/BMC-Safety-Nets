@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { PhoneCall, Ruler, FileCheck, ShieldAlert, Smile, ArrowRight, ArrowDown } from "lucide-react";
+import { PhoneCall, Ruler, FileCheck, ShieldAlert, Smile } from "lucide-react";
 
 const steps = [
   {

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle2, ShieldCheck, PenTool as Tool, Sparkles, PhoneCall, Zap } from "lucide-react";
+import { CheckCircle2, ShieldCheck, PhoneCall, Zap } from "lucide-react";
 
 const benefits = [
   { title: "Premium Quality Nets", desc: "We use ISO-standard materials with high load capacities." },
@@ -32,10 +32,10 @@ export default function WhyChooseUs() {
               Unmatched Standards
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-display leading-tight">
-              Why BMC is Bangalore's #1 Choice
+              {"Why BMC is Bangalore's #1 Choice"}
             </h2>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-              We don't believe in cheap temporary fixes. At BMC Safety Nets, we use marine-grade stainless steel wire ropes, 100% pure virgin HDPE netting, and heavy double-walled anchor expansions. Your family's safety is our highest priority.
+              {"We don't believe in cheap temporary fixes. At BMC Safety Nets, we use marine-grade stainless steel wire ropes, 100% pure virgin HDPE netting, and heavy double-walled anchor expansions. Your family's safety is our highest priority."}
             </p>
 
             {/* Graphic Trust Banner */}

@@ -123,9 +123,18 @@ const servicesData = {
   }
 };
 
+interface ServiceItem {
+  id: string;
+  name: string;
+  img: string;
+  tags: string[];
+  bulletPoints: string[];
+  description: string;
+}
+
 export default function Services() {
   const [activeTab, setActiveTab] = useState<"nets" | "grills" | "hangers">("nets");
-  const [selectedService, setSelectedService] = useState<any | null>(null);
+  const [selectedService, setSelectedService] = useState<ServiceItem | null>(null);
 
   useEffect(() => {
     const handleTabChange = (e: Event) => {
@@ -188,7 +197,7 @@ export default function Services() {
 
         {/* Active Tab description */}
         <div className="text-center max-w-2xl mx-auto mb-10 -mt-4 text-xs sm:text-sm text-slate-600 italic">
-          "{activeCategory.desc}"
+          &ldquo;{activeCategory.desc}&rdquo;
         </div>
 
         {/* Services Grid */}

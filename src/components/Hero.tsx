@@ -163,11 +163,11 @@ export default function Hero() {
     <>
       <section
         id="home"
-      className="relative min-h-[70vh] lg:min-h-screen flex items-center pt-20 pb-8 lg:pt-24 lg:pb-12 overflow-hidden bg-slate-50"
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
-    >
+        className="relative min-h-[75vh] lg:min-h-screen flex items-center pt-28 pb-8 sm:pt-32 lg:pt-40 lg:pb-12 overflow-hidden bg-slate-50"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
       {/* Standard HTML style tag to inject responsive styles for background overlay */}
       <style>{`
         .hero-gradient-overlay {
@@ -214,12 +214,12 @@ export default function Hero() {
 
           {/* Hero Left Content */}
           <div className="lg:col-span-8 space-y-6">
-            <div className="min-h-[32px]">
+            <div className="min-h-[36px] sm:min-h-[40px] flex items-center">
               <motion.span
                 key={`tag-${currentSlide}`}
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-extrabold uppercase tracking-wider bg-[#f97316] text-white shadow-md"
+                className="inline-flex items-center gap-1.5 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full text-xs sm:text-sm font-extrabold uppercase tracking-wider bg-[#f97316] text-white shadow-md whitespace-nowrap"
               >
                 <Shield className="w-4 h-4 text-white" />
                 {slides[currentSlide].tagline}

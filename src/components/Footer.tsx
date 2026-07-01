@@ -22,7 +22,7 @@ export default function Footer() {
               <Logo height={56} theme="dark" />
             </div>
             <p className="text-slate-400 text-sm leading-relaxed mb-6">
-              Bangalore's trusted safety net installation experts. Protecting your family, balcony, pets, and children with 100% premium, UV-resistant, long-lasting materials.
+              {"Bangalore's trusted safety net installation experts. Protecting your family, balcony, pets, and children with 100% premium, UV-resistant, long-lasting materials."}
             </p>
             <div className="flex space-x-3">
               <a

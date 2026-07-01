@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Phone, MessageCircle, MapPin, Mail, Clock, Send, CheckCircle } from "lucide-react";
-import { motion } from "framer-motion";
 
 export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);

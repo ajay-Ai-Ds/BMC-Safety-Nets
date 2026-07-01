@@ -111,7 +111,7 @@ export default function Trust() {
             transition={{ delay: 0.1 }}
             className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 font-display"
           >
-            Bangalore's Most Trusted Protection Services
+            {"Bangalore's Most Trusted Protection Services"}
           </motion.h2>
           <motion.div
             initial={{ width: 0 }}

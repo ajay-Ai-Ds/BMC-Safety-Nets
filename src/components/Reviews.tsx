@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Star, MessageSquare } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const reviews = [
   {
@@ -96,15 +96,18 @@ export default function Reviews() {
   const [windowWidth, setWindowWidth] = useState(0);
 
   useEffect(() => {
-    // Set initial width
-    setWindowWidth(window.innerWidth);
-
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
 
+    // Defer the initial set to avoid synchronous cascading render warning
+    const frame = requestAnimationFrame(() => {
+      handleResize();
+    });
+
     window.addEventListener("resize", handleResize);
     return () => {
+      cancelAnimationFrame(frame);
       window.removeEventListener("resize", handleResize);
     };
   }, []);
@@ -200,7 +203,7 @@ export default function Reviews() {
                   {/* Review Text */}
                   <div className="overflow-y-auto pr-1 flex-1 min-h-0">
                     <p className="text-slate-600 text-xs sm:text-sm leading-relaxed italic">
-                      "{rev.text}"
+                      &ldquo;{rev.text}&rdquo;
                     </p>
                   </div>
                 </div>
