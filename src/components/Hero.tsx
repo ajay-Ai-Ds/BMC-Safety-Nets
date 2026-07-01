@@ -163,7 +163,7 @@ export default function Hero() {
     <>
       <section
         id="home"
-        className="relative min-h-[75vh] lg:min-h-screen flex items-center pt-28 pb-8 sm:pt-32 lg:pt-40 lg:pb-12 overflow-hidden bg-slate-50"
+        className="relative min-h-[75vh] lg:min-h-screen flex items-center pt-36 pb-8 sm:pt-40 lg:pt-48 lg:pb-12 overflow-hidden bg-slate-50"
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
