@@ -72,10 +72,6 @@ export default function Gallery() {
     ? galleryItems
     : galleryItems.filter(item => item.category === activeFilter);
 
-  // Ensure we have enough items for a seamless marquee loop (at least 12 items, duplicated)
-  const repeatFactor = Math.ceil(12 / (filteredItems.length || 1));
-  const marqueeItems = Array(repeatFactor * 2).fill(filteredItems).flat();
-
   const openLightbox = (itemIndex: number) => {
     // Find index of the clicked item in the FILTERED list
     setLightboxIndex(itemIndex);
@@ -127,34 +123,24 @@ export default function Gallery() {
             </button>
           ))}
         </div>
-      </div>
 
-      {/* Full-width Horizontal Marquee Area with side gradient fades */}
-      <div className="relative w-full overflow-hidden py-4 marquee-container">
-        {/* Left Fade */}
-        <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-r from-white to-transparent pointer-events-none z-10" />
-        
-        {/* Right Fade */}
-        <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-l from-white to-transparent pointer-events-none z-10" />
-
-        {/* Marquee Flex Row */}
-        <div className="animate-marquee flex gap-6">
-          {marqueeItems.map((item, index) => {
-            const originalIndex = index % filteredItems.length;
+        {/* Gallery Grid Area (rendered exactly once per image, optimized) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredItems.map((item, index) => {
             return (
               <button
-                key={`${item.id}-${index}`}
-                className="relative group rounded-2xl overflow-hidden aspect-[4/3] w-[280px] sm:w-[350px] bg-slate-100 shadow-sm cursor-pointer hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 flex-shrink-0 text-left"
-                onClick={() => openLightbox(originalIndex)}
+                key={item.id}
+                className="relative group rounded-2xl overflow-hidden aspect-[4/3] w-full bg-slate-100 shadow-sm cursor-pointer hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 text-left"
+                onClick={() => openLightbox(index)}
                 aria-label={`View larger image of ${item.title}`}
               >
                 <Image
                   src={item.image}
                   alt={item.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 768px) 280px, 350px"
-                  priority={index < 6}
+                  width={400}
+                  height={300}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
                 />
                 
                 {/* Black Overlay on Hover */}
@@ -210,9 +196,10 @@ export default function Gallery() {
               <Image
                 src={filteredItems[lightboxIndex].image}
                 alt={filteredItems[lightboxIndex].title}
-                fill
-                className="object-contain"
-                sizes="(max-width: 1200px) 100vw, 1200px"
+                width={1200}
+                height={900}
+                className="w-full h-full object-contain"
+                loading="lazy"
               />
             </motion.div>
 

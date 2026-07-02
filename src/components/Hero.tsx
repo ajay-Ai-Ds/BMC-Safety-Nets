@@ -197,11 +197,12 @@ export default function Hero() {
             <Image
               src={slides[currentSlide].image}
               alt={slides[currentSlide].title}
-              fill
+              width={1920}
+              height={1080}
               priority={currentSlide === 0}
-              className="object-cover object-center"
+              className="w-full h-full object-cover object-center"
               style={{ filter: "saturate(1.4) brightness(0.85)" }}
-              sizes="100vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1920px"
             />
           </motion.div>
         </AnimatePresence>

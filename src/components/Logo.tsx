@@ -41,7 +41,8 @@ export default function Logo({
         <Image
           src="/images/logo_icon.png"
           alt="BMC Safety Nets Icon"
-          fill
+          width={iconSize}
+          height={iconSize}
           className="object-contain"
           priority
         />
