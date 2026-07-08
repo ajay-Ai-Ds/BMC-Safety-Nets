@@ -145,6 +145,25 @@ export default function RootLayout({
             `,
           }}
         />
+        {/* Event snippet for Contact conversion page */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              function gtag_report_conversion(url) {
+                var callback = function () {
+                  if (typeof(url) != 'undefined') {
+                    window.location = url;
+                  }
+                };
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-18291286869/gdBgCIWs38wcENXG-5FE',
+                    'event_callback': callback
+                });
+                return false;
+              }
+            `,
+          }}
+        />
         {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{

@@ -68,6 +68,11 @@ export default function Popups() {
       return;
     }
     
+    // Trigger Google Ads Conversion
+    if (typeof window !== 'undefined' && (window as any).gtag_report_conversion) {
+      (window as any).gtag_report_conversion();
+    }
+    
     // Simulate API submission
     setIsSubmitted(true);
     localStorage.setItem("bmc_popup_dismissed", "true");

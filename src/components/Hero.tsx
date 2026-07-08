@@ -147,6 +147,12 @@ export default function Hero() {
       alert("Please fill in Name and Phone.");
       return;
     }
+    
+    // Trigger Google Ads Conversion
+    if (typeof window !== 'undefined' && (window as any).gtag_report_conversion) {
+      (window as any).gtag_report_conversion();
+    }
+    
     setIsSubmitted(true);
     setName("");
     setPhone("");

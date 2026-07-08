@@ -31,6 +31,12 @@ export default function Contact() {
       alert("Name and Phone number are required.");
       return;
     }
+    
+    // Trigger Google Ads Conversion
+    if (typeof window !== 'undefined' && (window as any).gtag_report_conversion) {
+      (window as any).gtag_report_conversion();
+    }
+    
     setIsSubmitted(true);
     setName("");
     setPhone("");
